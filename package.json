@@ -6,5 +6,21 @@
   "repository": "https://github.com/simochee/ts-nuxt-boilerplate.git",
   "author": "simochee <simochee@gmail.com>",
   "license": "MIT",
-  "private": false
+  "scripts": {
+    "dev": "nuxt -H 0.0.0.0 -p 4300"
+  },
+  "dependencies": {
+    "nuxt": "^1.4.2",
+    "reset.css": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.10.1",
+    "node-sass": "^4.9.3",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^5.1.1",
+    "typescript": "^3.0.3"
+  }
 }
