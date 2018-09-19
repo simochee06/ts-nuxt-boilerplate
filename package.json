@@ -1,0 +1,10 @@
+{
+  "name": "ts-nuxt-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate of Nuxt.js with TypeScript and Sass",
+  "main": "index.js",
+  "repository": "https://github.com/simochee/ts-nuxt-boilerplate.git",
+  "author": "simochee <simochee@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
