@@ -1,8 +1,7 @@
-extends: stylelint-config-standard
-plugins:
-  - stylelint-order
+extends:
+  - stylelint-config-sugarss-recommended
 ignoreFiles:
   - .nuxt/**/*
   - node_modules/**/*
+plugins:
 rules:
-  order/properties-alphabetical-order: true
