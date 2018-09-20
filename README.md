@@ -9,10 +9,31 @@ Boilerplate of Nuxt.js with TypeScript and Sass.
 ## 🗝 Keywords
 
 * Yarn
-* **Nuxt.js** (4.0.0-alpha.22)
+* **Nuxt.js** (@4.0.0-alpha.22)
 * **TypeScript** / TSLint
 * **Sass** / Stylelint / PostCSS
 * Storybook
+
+## 🔥 Usage
+
+```sh
+$ vue init simochee/ts-nuxt-boilerplate my-project
+```
+
+### 📚 Storybook
+
+Template of story file for Storybook.
+
+```ts
+import { storiesOf } from '@storybook/vue';
+import Component from './index.vue';
+
+storiesOf('Component',  module)
+  .add('default', () => ({
+    components: { Component },
+    template: '<Component></Component>'
+  }));
+```
 
 <!--
 
