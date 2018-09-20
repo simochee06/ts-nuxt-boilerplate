@@ -27,7 +27,7 @@ module.exports = {
       }
 
       config.module.rules.push({
-        test: /\.postcss$/,
+        test: /\.sass$/,
         use: [
           'vue-style-loader',
           'css-loader',
