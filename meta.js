@@ -33,13 +33,13 @@ module.exports = {
       default: true
     },
     nuxt_port: {
-      type: 'number',
+      type: 'string',
       message: 'Nuxt.js port',
-      defualt: '4300'
+      default: '4300'
     },
     storybook_port: {
       when: 'storybook',
-      type: 'number',
+      type: 'string',
       message: 'Storybook port',
       default: '43000'
     }
