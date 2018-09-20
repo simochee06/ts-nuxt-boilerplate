@@ -1,7 +1,10 @@
 <template lang="pug">
-  .container
+  .element
     h1 Hello, World.
 </template>
 
 <script lang="ts">
 </script>
+
+<style lang="sass" scoped>
+</style>

@@ -50,12 +50,12 @@ module.exports = {
   },
   css: [
     'reset.css',
-    '@/assets/styles/main.css'
+    '@/assets/styles/main.sass'
   ],
   extensions: ['js', 'ts'],
   mode: 'spa',
   modules: [
-    // ['nuxt-sass-resources-loader', '@/assets/styles/resources.sss']
+    ['nuxt-sass-resources-loader', '@/assets/styles/resources.sass']
   ],
   srcDir: 'src/'
 };
