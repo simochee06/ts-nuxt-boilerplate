@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt -H 0.0.0.0 -p 4300",
+    "generate": "nuxt generate",
     "lint:sass": "stylelint 'src/**/*.(sass|vue)'",
     "storybook": "start-storybook -p 43000 --quiet"
   },
@@ -28,7 +29,6 @@
     "nuxt-sass-resources-loader": "^2.0.5",
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
-    "postcss-reporter": "^6.0.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",

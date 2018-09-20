@@ -26,18 +26,6 @@ module.exports = {
         });
       }
 
-      config.module.rules.push({
-        test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader'
-          },
-          'sass-loader'
-        ]
-      });
-
       config.module.rules.push({ test: /((client|server)\.js)|(\.tsx?)$/, ...tsLoader });
       config.resolve.extensions.push('.ts');
       config.module.rules.map((rule) => {

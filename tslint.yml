@@ -5,4 +5,4 @@ rules:
   no-console: false
 linterOptions:
   exclude:
-    - *.stor(y|ies).ts
+    - "*.stor(y|ies).ts"
