@@ -26,6 +26,15 @@ module.exports = {
       type: 'string',
       message: 'License',
       default: 'MIT'
+    },
+    storybook: {
+      type: 'confirm',
+      message: 'Use Storybook?',
+      default: true
     }
-  }
+  },
+  filters: {
+    '.storybook/**/*': 'storybook'
+  },
+  skipInterpolation: '*.vue'
 };
