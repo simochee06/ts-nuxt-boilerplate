@@ -9,9 +9,10 @@ Boilerplate of Nuxt.js with TypeScript and Sass.
 ## 🗝 Keywords
 
 * Yarn
-* **Nuxt.js**
-* **TypeScript** / **TSLint**
-* **Sass** / **Stylelint**
+* **Nuxt.js** (4.0.0-alpha.22)
+* **TypeScript** / TSLint
+* **Sass** / Stylelint / PostCSS
+* Storybook
 
 <!--
 

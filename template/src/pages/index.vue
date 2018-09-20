@@ -1,6 +1,6 @@
 <template lang="pug">
   .element
-    h1 Hello, World.
+    h1 Hello, World!
 </template>
 
 <script lang="ts">
