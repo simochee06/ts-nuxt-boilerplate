@@ -31,6 +31,17 @@ module.exports = {
       type: 'confirm',
       message: 'Use Storybook?',
       default: true
+    },
+    nuxt_port: {
+      type: 'number',
+      message: 'Nuxt.js port',
+      defualt: '4300'
+    },
+    storybook_port: {
+      when: 'storybook',
+      type: 'number',
+      message: 'Storybook port',
+      default: '43000'
     }
   },
   filters: {

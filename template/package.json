@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "nuxt -H 0.0.0.0 -p {{nuxt_port}}",
     "generate": "nuxt generate",
-    "lint:sass": "stylelint 'src/**/*.(sass|vue)'",
-    "storybook": "start-storybook -p {{storybook_port}} --quiet"
+    "lint:sass": "stylelint 'src/**/*.(sass|vue)'"{{#if_eq storybook true}},
+    "storybook": "start-storybook -p {{storybook_port}} --quiet"{{/if_eq}
   },
   "dependencies": {
     "nuxt": "npm:nuxt-edge",
