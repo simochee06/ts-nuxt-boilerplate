@@ -1,7 +1,10 @@
-extends:
-  - tslint:recommended
+extends: tslint-config-airbnb
 rules:
-  no-console: false
-linterOptions:
-  exclude:
-    - "*.stor(y|ies).ts"
+  import-name: false # Vue Componentをexport defaultできないので無効化
+  no-inferrable-types: true # 型推論可能な場合は型を書かない
+  object-literal-sort-keys: true # オブジェクトリテラルをアルファベット順に並べる
+  prefer-method-signature: true # foo: () => voidではなくfoo(): voidを推奨する
+  prefer-object-spread: true # Object.assignより分割代入を推奨する
+  typedef: # 型の定義を強制する
+    - true
+    - call-signature # 関数の戻り値
