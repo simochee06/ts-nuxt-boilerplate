@@ -1,0 +1,9 @@
+---
+# extends: stylelint-config-standard
+plugins:
+  - stylelint-order
+ignoreFiles:
+  - .nuxt/**/*
+  - node_modules/**/*
+rules:
+  order/properties-alphabetical-order: true

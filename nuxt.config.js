@@ -2,24 +2,37 @@ const FriendlyErrorsWebpackPlugin = require('@nuxtjs/friendly-errors-webpack-plu
 
 module.exports = {
   build: {
-    extend(config, { isServer }) {
+    extend(config, { isDev }) {
       const tsLoader = {
         loader: 'ts-loader',
         options: { appendTsSuffixTo: [/\.vue$/], transpileOnly: true },
         exclude: [/vendor/, /\.nuxt/]
       };
 
-      config.module.rules.push({
-        enforce: 'pre',
-        test: /\.(tsx?|vue)$/,
-        exclude: /(node_modules|\.nuxt)/,
-        use: [
-          {
-            loader: 'vue-tslint-loader',
-            options: {
-              emitErrors: true,
-              configFile: 'tslint.yml'
+      if (isDev) {
+        // TSLint
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(tsx?|vue)$/,
+          exclude: /(node_modules|\.nuxt)/,
+          use: [
+            {
+              loader: 'vue-tslint-loader',
+              options: {
+                configFile: 'tslint.yml'
+              }
             }
+          ]
+        });
+      }
+
+      config.module.rules.push({
+        test: /\.postcss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader'
           }
         ]
       });
@@ -30,19 +43,18 @@ module.exports = {
         if (rule.loader === 'vue-loader') rule.options.loaders = { ts: tsLoader };
         return rule;
       });
-      config.plugins.push(new FriendlyErrorsWebpackPlugin());
 
-      if (isServer) config.externals = [];
+      config.plugins.push(new FriendlyErrorsWebpackPlugin());
     }
   },
   css: [
     'reset.css',
-    '@/assets/styles/main.sass'
+    '@/assets/styles/main.css'
   ],
   extensions: ['js', 'ts'],
   mode: 'spa',
   modules: [
-    ['nuxt-sass-resources-loader', '@/assets/styles/resources.sass']
+    // ['nuxt-sass-resources-loader', '@/assets/styles/resources.sss']
   ],
   srcDir: 'src/'
 };
