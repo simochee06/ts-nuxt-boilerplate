@@ -1,16 +1,15 @@
 {
-  "name": "ts-nuxt-boilerplate",
-  "version": "1.0.0",
-  "description": "Boilerplate of Nuxt.js with TypeScript and Sass",
-  "main": "index.js",
-  "repository": "https://github.com/simochee/ts-nuxt-boilerplate.git",
-  "author": "simochee <simochee@gmail.com>",
-  "license": "MIT",
+  "name": "{{name}}",
+  "version": "{{version}}",
+  "description": "{{description}}",{{#unless_eq repository ''}}
+  "repository": "{{repository}}",{{/unless_eq}}
+  "author": "{{author}}",
+  "license": "{{license}}",
   "scripts": {
-    "dev": "nuxt -H 0.0.0.0 -p 4300",
+    "dev": "nuxt -H 0.0.0.0 -p {{nuxt_port}}",
     "generate": "nuxt generate",
     "lint:sass": "stylelint 'src/**/*.(sass|vue)'",
-    "storybook": "start-storybook -p 43000 --quiet"
+    "storybook": "start-storybook -p {{storybook_port}} --quiet"
   },
   "dependencies": {
     "nuxt": "npm:nuxt-edge",
