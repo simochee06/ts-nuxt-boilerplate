@@ -2,6 +2,7 @@
 
 # Nuxt.js
 .nuxt/
+dist/
 
 # Logs
 logs
