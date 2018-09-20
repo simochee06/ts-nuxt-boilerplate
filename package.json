@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nuxt -H 0.0.0.0 -p 4300",
-    "lint:sass": "stylelint 'src/**/*.(sass|vue)'"
+    "lint:sass": "stylelint 'src/**/*.(sass|vue)'",
+    "storybook": "start-storybook -p 43000 --quiet"
   },
   "dependencies": {
     "nuxt": "npm:nuxt-edge",
@@ -17,8 +18,11 @@
   },
   "devDependencies": {
     "@nuxtjs/friendly-errors-webpack-plugin": "^2.0.2",
+    "@storybook/vue": "^4.0.0-alpha.22",
     "@types/node": "^10.10.1",
+    "@types/storybook__vue": "^3.3.0",
     "autoprefixer": "^9.1.5",
+    "babel-preset-vue": "^2.0.2",
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.3",
     "nuxt-sass-resources-loader": "^2.0.5",
