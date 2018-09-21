@@ -4,4 +4,5 @@ ignoreFiles:
   - .nuxt/**/*
   - node_modules/**/*
 plugins:
+  - stylelint-scss
 rules:
