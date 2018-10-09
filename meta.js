@@ -30,7 +30,7 @@ module.exports = {
     css: {
       type: 'list',
       message: 'Which use css preprocessor?',
-      default: [
+      choices: [
         'CSS',
         'Sass',
         'Stylus'
