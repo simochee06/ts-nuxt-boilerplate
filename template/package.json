@@ -7,8 +7,8 @@
   "license": "{{license}}",
   "scripts": {
     "dev": "nuxt -H 0.0.0.0 -p {{nuxt_port}}",
-    "generate": "nuxt generate",
-    "lint:sass": "stylelint 'src/**/*.(sass|vue)'"{{#if_eq storybook true}},
+    "generate": "nuxt generate"{{#isEnabled css 'sass'}},
+    "lint:sass": "stylelint 'src/**/*.(sass|vue)'"{{/isEnabled}}{{#if_eq storybook true}},
     "storybook": "start-storybook -p {{storybook_port}} --quiet"{{/if_eq}}
   },
   "dependencies": {
@@ -24,18 +24,18 @@
     "@types/storybook__vue": "^3.3.0",{{/if_eq}}
     "autoprefixer": "^9.1.5",
     "babel-preset-vue": "^2.0.2",
-    "css-loader": "^1.0.0",
+    "css-loader": "^1.0.0",{{#isEnabled css 'sass'}}
     "node-sass": "^4.9.3",
-    "nuxt-sass-resources-loader": "^2.0.5",
+    "nuxt-sass-resources-loader": "^2.0.5",{{/isEnabled}}
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
     "pug": "^2.0.3",
-    "pug-plain-loader": "^1.0.0",
+    "pug-plain-loader": "^1.0.0",{{#isEnabled css 'sass'}}
     "sass-loader": "^7.1.0",{{#if_eq storybook true}}
-    "sass-resources-loader": "^1.3.3",{{/if_eq}}
-    "stylelint": "^9.5.0",
+    "sass-resources-loader": "^1.3.3",{{/if_eq}}{{/isEnabled}}
+    "stylelint": "^9.5.0",{{#isEnabled css 'sass'}}
     "stylelint-config-sugarss-recommended": "^1.2.0",
-    "stylelint-scss": "^3.3.0",
+    "stylelint-scss": "^3.3.0",{{/isEnabled}}
     "ts-loader": "^5.1.1",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
