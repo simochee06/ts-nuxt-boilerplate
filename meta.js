@@ -34,8 +34,7 @@ module.exports = {
         'CSS',
         'Sass',
         'Stylus'
-      ],
-      default: 'CSS'
+      ]
     },
     storybook: {
       type: 'confirm',
