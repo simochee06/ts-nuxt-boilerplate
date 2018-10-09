@@ -53,7 +53,9 @@ module.exports = {
     }
   },
   filters: {
-    '.storybook/**/*': 'storybook',
+    '.storybook/**/*': 'storybook'
+  },
+  helpers: {
     isEnabled(list, check, opts) {
       if (list[check]) return opts.fn(this)
       else return opts.inverse(this)
