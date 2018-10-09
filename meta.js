@@ -27,6 +27,15 @@ module.exports = {
       message: 'License',
       default: 'MIT'
     },
+    css: {
+      type: 'list',
+      message: 'Which use css preprocessor?',
+      default: [
+        'CSS',
+        'Sass'
+      ],
+      default: 'CSS'
+    },
     storybook: {
       type: 'confirm',
       message: 'Use Storybook?',
@@ -45,7 +54,11 @@ module.exports = {
     }
   },
   filters: {
-    '.storybook/**/*': 'storybook'
+    '.storybook/**/*': 'storybook',
+    isEnabled(list, check, opts) {
+      if (list[check]) return opts.fn(this)
+      else return opts.inverse(this)
+    }
   },
   skipInterpolation: '*.vue'
 };
