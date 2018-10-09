@@ -31,9 +31,8 @@ module.exports = {
       type: 'list',
       message: 'Which use css preprocessor?',
       choices: [
-        'CSS',
-        'Sass',
-        'Stylus'
+        'css',
+        'sass'
       ]
     },
     storybook: {
