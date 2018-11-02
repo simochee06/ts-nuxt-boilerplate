@@ -14,7 +14,7 @@ rules:
       printWidth: 100 # １行の文字数
       semi: true # セミコロンを付与する
       singleQuote: true # シングルクォーテーションに揃える
-      trailingComma: none # ケツカンマをなくす
+      trailingComma: none # ケツカンマをなくす{{#if_eq lint_rule true}}
   class-name: true # クラス名をパスカルケースに強制
   member-access: false # public,protected,privateの付与を強制しない
   newline-before-return: true # returnの前に改行を強制
@@ -34,6 +34,4 @@ rules:
     - always
   typedef: # 型の定義を強制する
     - true
-    - call-signature # 関数の戻り値
-
-
+    - call-signature # 関数の戻り値{{/if_eq}}

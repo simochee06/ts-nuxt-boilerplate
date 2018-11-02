@@ -5,7 +5,7 @@ ignoreFiles:
   - node_modules/**/*
 plugins:
   - stylelint-scss
-rules:
+rules:{{#if_eq lint_rule true}}
   declaration-block-no-redundant-longhand-properties: # 省略可能な記法を使用する
     - true
     - ignoreShorthands:
@@ -17,4 +17,4 @@ rules:
   max-line-length: null # １行の文字数を制限しない
   no-unknown-animations: null # Vueによってハッシュが割り当てられるので無効化
   number-leading-zero: always # 小数の最初の0を省略させない
-  selector-list-comma-newline-after: null # 複数セレクタのカンマの後にスペースを入れるか
+  selector-list-comma-newline-after: null # 複数セレクタのカンマの後にスペースを入れるか{{/if_eq}}

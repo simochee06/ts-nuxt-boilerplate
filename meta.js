@@ -27,6 +27,11 @@ module.exports = {
       message: 'License',
       default: 'MIT'
     },
+    lint_rule: {
+      type: 'confirm',
+      message: 'Use original lint rules?',
+      default: true
+    },
     storybook: {
       type: 'confirm',
       message: 'Use Storybook?',
