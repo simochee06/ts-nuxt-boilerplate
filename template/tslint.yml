@@ -4,7 +4,7 @@ extends:
 rulesDirectory:
   - tslint-plugin-prettier
 
-rules:
+rules:{{#if_eq lint_rule true}}
   prettier: # Prettierの設定
     - true
     -
