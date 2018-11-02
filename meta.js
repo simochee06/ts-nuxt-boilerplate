@@ -27,6 +27,11 @@ module.exports = {
       message: 'License',
       default: 'MIT'
     },
+    lint_rule: {
+      type: 'confirm',
+      message: 'Use original lint rules?',
+      default: true
+    },
     storybook: {
       type: 'confirm',
       message: 'Use Storybook?',
@@ -45,7 +50,8 @@ module.exports = {
     }
   },
   filters: {
-    '.storybook/**/*': 'storybook'
+    '.storybook/**/*': 'storybook',
+    'stories/**/*': 'storybook'
   },
   skipInterpolation: '*.vue'
 };

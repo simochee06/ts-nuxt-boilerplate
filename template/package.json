@@ -1,15 +1,17 @@
 {
   "name": "{{name}}",
   "version": "{{version}}",
-  "description": "{{description}}",{{#unless_eq repository ''}}
-  "repository": "{{repository}}",{{/unless_eq}}
-  "author": "{{author}}",
+  "description": "{{description}}",
   "license": "{{license}}",
+  "author": "{{author}}",{{#unless_eq repository ''}}
+  "repository": "{{repository}}",{{/unless_eq}}
   "scripts": {
-    "dev": "nuxt -H 0.0.0.0 -p {{nuxt_port}}",
+    "dev": "nuxt -H 0.0.0.0 -p 43900",
+    "clean:cache": "rm -rf node_modules/.cache/hard-source",
     "generate": "nuxt generate",
     "lint:sass": "stylelint 'src/**/*.(sass|vue)'"{{#if_eq storybook true}},
-    "storybook": "start-storybook -p {{storybook_port}} --quiet"{{/if_eq}}
+    "storybook": "start-storybook -p {{storybook_port}} --quiet",
+    "storybook:build": "build-storybook -o docs"{{/if_eq}}
   },
   "dependencies": {
     "nuxt": "npm:nuxt-edge",
@@ -19,28 +21,40 @@
   },
   "devDependencies": {
     "@nuxtjs/friendly-errors-webpack-plugin": "^2.0.2",{{#if_eq storybook true}}
-    "@storybook/vue": "^4.0.0-alpha.22",{{/if_eq}}
-    "@types/node": "^10.10.1",{{#if_eq storybook true}}
+    "@storybook/addon-actions": "^4.0.0",
+    "@storybook/addon-knobs": "^4.0.0",
+    "@storybook/addon-viewport": "^4.0.0",
+    "@storybook/react": "^4.0.0",
+    "@storybook/vue": "^4.0.0",{{/if_eq}}
+    "@types/node": "^10.10.1",
+    "@types/storybook__addon-actions": "^3.4.1",{{#if_eq storybook true}}
+    "@types/storybook__addon-knobs": "^3.4.1",
     "@types/storybook__vue": "^3.3.0",{{/if_eq}}
-    "autoprefixer": "^9.1.5",
-    "babel-preset-vue": "^2.0.2",
+    "autoprefixer": "^9.1.5",{{#if_eq storybook true}}
+    "babel-preset-vue": "^2.0.2",{{/if_eq}}
     "css-loader": "^1.0.0",
+    "fork-ts-checker-webpack-plugin": "^0.4.14",
+    "hard-source-webpack-plugin": "^0.12.0",
     "node-sass": "^4.9.3",
     "nuxt-sass-resources-loader": "^2.0.5",
     "postcss": "^7.0.2",
     "postcss-loader": "^3.0.0",
+    "postcss-reporter": "^6.0.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",{{#if_eq storybook true}}
-    "sass-resources-loader": "^1.3.3",{{/if_eq}}
+    "sass-resources-loader": "^1.3.3",
+    "storybook-readme": "^4.0.2",{{/if_eq}}
     "stylelint": "^9.5.0",
     "stylelint-config-sugarss-recommended": "^1.2.0",
     "stylelint-scss": "^3.3.0",
     "ts-loader": "^5.1.1",
     "tslint": "^5.11.0",
-    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-plugin-prettier": "^2.0.0",
     "typescript": "^3.0.3",
-    "vue-tslint-loader": "^3.5.6"{{#if_eq storybook true}},
+    "vue-tslint-loader": "^3.5.6",
+    "vuex-map-decorators": "^1.1.0"{{#if_eq storybook true}},
     "webpack-merge": "^4.1.4"{{/if_eq}}
   }
 }
