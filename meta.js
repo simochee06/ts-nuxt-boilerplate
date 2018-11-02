@@ -45,7 +45,8 @@ module.exports = {
     }
   },
   filters: {
-    '.storybook/**/*': 'storybook'
+    '.storybook/**/*': 'storybook',
+    'stories/**/*': 'storybook'
   },
   skipInterpolation: '*.vue'
 };
