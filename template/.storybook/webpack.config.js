@@ -6,10 +6,11 @@ module.exports = (storybookBaseConfig, configType, config) => {
     module: {
       rules: [
         {
-          test: /\.ts$/,
+          test: /\.tsx?$/,
           loader: 'ts-loader',
           options: {
-            appendTsSuffixTo: [/\.vue$/]
+            appendTsSuffixTo: [/\.vue$/],
+            transpileOnly: true
           }
         },
         {
@@ -17,7 +18,7 @@ module.exports = (storybookBaseConfig, configType, config) => {
           use: [
             'vue-style-loader',
             'css-loader',
-            'postcss-loader',
+            // 'postcss-loader',
             {
               loader: 'sass-loader',
               options: {
@@ -28,7 +29,9 @@ module.exports = (storybookBaseConfig, configType, config) => {
               loader: 'sass-resources-loader',
               options: {
                 resources: [
-                  path.resolve(__dirname, '../src/assets/styles/resources.sass')
+                  path.resolve(__dirname, '../src/assets/styles/variables/**/*.sass'),
+                  path.resolve(__dirname, '../src/assets/styles/utilities/**/*.sass'),
+                  path.resolve(__dirname, '../src/assets/styles/components/**/*.sass')
                 ]
               }
             }
@@ -37,12 +40,23 @@ module.exports = (storybookBaseConfig, configType, config) => {
         {
           test: /\.pug$/,
           loader: 'pug-plain-loader'
+        },
+        {
+          resourceQuery: /blockType=docs/,
+          use: [
+            'storybook-readme/env/vue/docs-loader',
+            'html-loader',
+            'markdown-loader'
+          ]
         }
       ]
     },
 
     resolve: {
-      extensions: [ '.ts', '.vue', '.css' ]
+      alias: {
+        '@': path.resolve(__dirname, '../src')
+      },
+      extensions: ['.ts']
     }
   });
 };
