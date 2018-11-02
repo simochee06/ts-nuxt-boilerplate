@@ -1,3 +1,39 @@
-extends: tslint-config-airbnb
+---
+extends:
+  - tslint-config-prettier
+
+rulesDirectory:
+  - tslint-plugin-prettier
+
 rules:
-  import-name: false # Vue Componentをexport defaultできないので無効化
+  prettier: # Prettierの設定
+    - true
+    -
+      arrowParens: always # Arrow Functionのカッコを付与する
+      bracketSpacing: true # Objectのカッコの両側にスペースを付与する
+      printWidth: 100 # １行の文字数
+      semi: true # セミコロンを付与する
+      singleQuote: true # シングルクォーテーションに揃える
+      trailingComma: none # ケツカンマをなくす
+  class-name: true # クラス名をパスカルケースに強制
+  member-access: false # public,protected,privateの付与を強制しない
+  newline-before-return: true # returnの前に改行を強制
+  no-boolean-literal-compare: false # Prettierがやってくれるので無効化
+  no-console: false # デバッグするときにうるさいから許可
+  no-inferrable-types: true # 型推論可能な場合は型を書かない
+  no-string-throw: true # 文字列のthrowを禁止
+  no-unused-expression: false # 文の位置の表現の使用を許可する
+  no-unused-variable: true # 未使用の変数を許可しない
+  # object-literal-sort-keys: true # オブジェクトリテラルをアルファベット順に並べる
+  prefer-method-signature: true # foo: () => voidではなくfoo(): voidを推奨する
+  prefer-object-spread: true # Object.assignより分割代入を推奨する
+  prefer-template: true # 文字列結合よりテンプレートリテラルを推奨する
+  switch-default: true # switch文にdefault caseを強制
+  switch-final-break: # switch文の最後にbreakを強制
+    - true
+    - always
+  typedef: # 型の定義を強制する
+    - true
+    - call-signature # 関数の戻り値
+
+
