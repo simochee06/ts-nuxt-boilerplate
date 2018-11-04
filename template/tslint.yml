@@ -4,16 +4,16 @@ extends:
 rulesDirectory:
   - tslint-plugin-prettier
 
-rules:{{#if_eq lint_rule true}}
+rules:
   prettier: # Prettierの設定
-    - true
+    - true{{#if_eq lint_rule true}}
     -
       arrowParens: always # Arrow Functionのカッコを付与する
       bracketSpacing: true # Objectのカッコの両側にスペースを付与する
       printWidth: 100 # １行の文字数
       semi: true # セミコロンを付与する
       singleQuote: true # シングルクォーテーションに揃える
-      trailingComma: none # ケツカンマをなくす{{#if_eq lint_rule true}}
+      trailingComma: none # ケツカンマをなくす
   class-name: true # クラス名をパスカルケースに強制
   member-access: false # public,protected,privateの付与を強制しない
   newline-before-return: true # returnの前に改行を強制
